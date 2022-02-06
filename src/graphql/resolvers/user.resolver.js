@@ -12,7 +12,9 @@ export const userSchema = gql`
 
 export default {
   Query: {
-    me: async () => {
+    me: async (_, __, { me }) => {
+      // eslint-disable-next-line no-console
+      console.log('!me', me)
       return { email: 'admin@admin.com', name: 'Admin' }
     }
   }
